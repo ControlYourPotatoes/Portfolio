@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
         <div className="text-orange-500 text-2xl font-bold">D</div>
         <ul className="flex space-x-6">
           <li><Link to="about" smooth={true} duration={500} className="hover:text-orange-500 cursor-pointer">About</Link></li>
-          <li><Link to="portfolio" smooth={true} duration={500} className="hover:text-orange-500 cursor-pointer">Portfolio</Link></li>
+          <li><Link to="Projects" smooth={true} duration={500} className="hover:text-orange-500 cursor-pointer">Projects</Link></li>
           <li><Link to="contact" smooth={true} duration={500} className="hover:text-orange-500 cursor-pointer">Contact</Link></li>
         </ul>
       </div>
