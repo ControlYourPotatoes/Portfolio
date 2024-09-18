@@ -6,7 +6,7 @@ import Contact from '../sections/contact';
 
 const LandingPage: React.FC = () => {
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-gray-800 text-white">
       <TopSection />
       <AboutMe />
       <Projects />

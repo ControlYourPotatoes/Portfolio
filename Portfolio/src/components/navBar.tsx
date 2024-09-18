@@ -3,13 +3,16 @@ import { Link } from 'react-scroll';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-gray-900 text-white p-4 border-b border-orange-500">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-orange-500 text-2xl font-bold">D</div>
+    <nav className="bg-gray p-4 border-b border-orange">
+      <div className="container mx-auto flex justify-end items-center">
         <ul className="flex space-x-6">
-          <li><Link to="about" smooth={true} duration={500} className="hover:text-orange-500 cursor-pointer">About</Link></li>
-          <li><Link to="Projects" smooth={true} duration={500} className="hover:text-orange-500 cursor-pointer">Projects</Link></li>
-          <li><Link to="contact" smooth={true} duration={500} className="hover:text-orange-500 cursor-pointer">Contact</Link></li>
+          {['About', 'Projects', 'Contact'].map((item) => (
+            <li key={item}>
+              <Link to={item.toLowerCase()} smooth={true} duration={500} className="nav-link">
+                {item}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
