@@ -17,7 +17,8 @@ const TopSection: React.FC = () => {
           {/* Left side: Content */}
           <div className="w-1/3 pr-3">
             <h1 className="text-5xl font-bold mb-2 text-orange"> Alexander Puga</h1>
-            <p className="text-xl mb-4 text-white">Full Stack Web3 Developer</p>
+            <p className="text-xl mb-1 text-white">Full Stack Web3 Developer</p>
+            <p className="text-md mb-4 text-white"> Puerto Rico </p>
             <button className="bg-orange text-white px-6 py-2 rounded-full hover:bg-orange-light transition duration-300">Contact Me</button>
           </div>
           
