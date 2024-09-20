@@ -5,10 +5,10 @@ import { IoLanguage } from 'react-icons/io5';
 
 const SkillCard = ({ skill, Icon }) => (
   <div className="bg-gray-light rounded-lg p-4 w-32 h-32 flex flex-col items-center justify-center hover:bg-gray-dark transition-colors duration-300 group">
-    <div className="text-orange-light group-hover:text-white transition-colors duration-300">
-      <Icon className="w-8 h-8 mb-2" />
+    <div className="text-orange-light">
+      <Icon className="w-10 h-12 mb-2 group-hover:text-orange-light transition-colors duration-300" />
     </div>
-    <span className="text-xs font-medium text-center group-hover:text-white transition-colors duration-300">{skill}</span>
+    <span className="text-xs font-bold text-center group-hover:text-orange transition-colors duration-300">{skill}</span>
   </div>
 );
 
@@ -50,8 +50,8 @@ const AboutMe = () => {
 
   return (
     <section id="about" className="py-20 bg-gray">
-      <div className="container mx-auto px-24">
-        <h2 className="text-3xl font-bold mb-5 text-orange">About Me</h2>
+      <div className="container mx-auto px-36">
+        <h2 className="text-3xl font-bold mb-5 text-orange px-4">About Me</h2>
         <div className="flex justify-start mb-12">
           <div className="h-16 w-0.5 bg-orange mr-4"></div>
           <p className="text-lg max-w-3xl">
