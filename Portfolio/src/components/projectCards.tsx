@@ -71,7 +71,7 @@ const ProjectCard = ({ title, description, techStack, githubLink, demoLink }) =>
           ref={ref}
           style={{ x }}
           animate={controls}
-          className="flex space-x-4"
+          className="flex space-x-4 mt-4 mb-2"
         >
           {[...techStack, ...techStack].map((tech, index) => (
             <TechIcon key={index} Icon={tech.Icon} name={tech.name} />
