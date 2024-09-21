@@ -12,7 +12,7 @@ const TopSection: React.FC = () => {
   return (
     <section className="bg-gray-dark min-h-screen flex flex-col">
       <Navbar />
-      <div className="container mx-auto flex-grow flex items-center h-10">
+      <div className="container mx-auto flex-grow flex items-center">
         <div className="flex w-full items-center">
           {/* Left side: Content */}
           <div className="w-1/3 pr-3">

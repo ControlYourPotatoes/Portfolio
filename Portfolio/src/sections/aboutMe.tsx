@@ -2,17 +2,34 @@ import React from 'react';
 import { FaPython, FaJs, FaReact, FaDocker, FaGitAlt, FaHtml5, FaCss3Alt, FaApple } from 'react-icons/fa';
 import { SiGooglecloud, SiPostgresql, SiTailwindcss, SiUbuntu, SiWindows } from 'react-icons/si';
 import { IoLanguage } from 'react-icons/io5';
+import { IconType } from 'react-icons';
 
-const SkillCard = ({ skill, Icon }) => (
-  <div className="bg-gray-light rounded-lg p-4 w-32 h-32 flex flex-col items-center justify-center hover:bg-gray-dark transition-colors duration-300 group">
+interface SkillCardProps {
+  skill: string;
+  Icon: IconType;
+}
+
+
+const SkillCard: React.FC<SkillCardProps> = ({ skill, Icon }) => (
+  <div className="bg-gray-light rounded-lg p-4 w-32 h-32 flex flex-col items-center justify-center hover:bg-gray-dark hover:drop-shadow-xl transition-colors duration-300 group">
     <div className="text-orange-light">
       <Icon className="w-10 h-12 mb-2 group-hover:text-orange-light transition-colors duration-300" />
     </div>
-    <span className="text-xs font-bold text-center group-hover:text-orange transition-colors duration-300">{skill}</span>
+    <span className="text-sm font-bold text-center group-hover:text-orange transition-colors duration-300">{skill}</span>
   </div>
 );
 
-const SkillSection = ({ title, items }) => (
+interface SkillItem {
+  name: string;
+  Icon: IconType;
+}
+
+interface SkillSectionProps {
+  title: string;
+  items: SkillItem[];
+}
+
+const SkillSection: React.FC<SkillSectionProps> = ({ title, items }) => (
   <div className="mb-12">
     <h3 className="text-2xl font-semibold mb-6 text-orange-light text-center">{title}</h3>
     <div className="flex flex-wrap justify-center gap-4">
