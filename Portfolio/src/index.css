@@ -4,7 +4,7 @@
 
 @layer components {
   .nav-link {
-    @apply cursor-pointer text-lg px-3 py-2 rounded transition duration-300 hover:text-orange hover:bg-gray-light;
+    @apply cursor-pointer text-lg px-3 py-2 rounded transition duration-300 hover:text-orange-500 hover:bg-gray-light;
   }
 }
 

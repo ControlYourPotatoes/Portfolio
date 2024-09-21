@@ -10,7 +10,7 @@ const TopSection: React.FC = () => {
   //Image opacity
   const imageOpacity = 0.5;
   return (
-    <section className="bg-gray-dark min-h-screen flex flex-col">
+    <section className="bg-gray min-h-screen flex flex-col">
       <Navbar />
       <div className="container mx-auto flex-grow flex items-center">
         <div className="flex w-full items-center">
