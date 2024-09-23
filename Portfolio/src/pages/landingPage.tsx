@@ -2,7 +2,7 @@ import React from 'react';
 import TopSection from '../sections/topSection';
 import AboutMe from '../sections/aboutMe';
 import Projects from '../sections/projects';
-import Contact from '../sections/contact';
+import ContactSection from '../sections/contactSection';
 
 const LandingPage: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const LandingPage: React.FC = () => {
       <TopSection />
       <AboutMe />
       <Projects />
-      <Contact />
+      <ContactSection />
     </div>
   );
 };

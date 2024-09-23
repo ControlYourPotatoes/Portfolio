@@ -12,24 +12,32 @@ interface SkillCardProps {
   index: number;
 }
 
-const SkillCard: React.FC<SkillCardProps> = ({ skill, Icon }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 500 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.1 }}
-    whileHover={{ scale: 1.05}}
-    className="bg-gray-light rounded-lg p-4 w-32 h-32 flex flex-col items-center justify-center hover:bg-gray-dark hover:drop-shadow-xl transition-all duration-300 group"
-  >
+const SkillCard: React.FC<SkillCardProps> = ({ skill, Icon, index }) => {
+  const { ref, controls } = useScrollAnimation({
+    threshold: 0.1,
+    initialStates: { opacity: 0, y: 50 }
+  });
+
+  return (
     <motion.div
-      whileHover={{ rotate: 360 }}
-      transition={{ duration: 0.5 }}
-      className="text-orange-light"
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={controls}
+      transition={{ duration: 0.3, delay: index * 0.1 }}
+      whileHover={{ scale: 1.05 }}
+      className="bg-gray-light rounded-lg p-4 w-32 h-32 flex flex-col items-center justify-center hover:bg-gray-dark hover:drop-shadow-xl transition-all duration-300 group"
     >
-      <Icon className="w-10 h-12 mb-2 group-hover:text-orange-light transition-colors duration-300" />
+      <motion.div
+        whileHover={{ rotate: 360 }}
+        transition={{ duration: 0.5 }}
+        className="text-orange-light"
+      >
+        <Icon className="w-10 h-12 mb-2 group-hover:text-orange-light transition-colors duration-300" />
+      </motion.div>
+      <span className="text-sm font-bold text-center group-hover:text-orange transition-colors duration-300">{skill}</span>
     </motion.div>
-    <span className="text-sm font-bold text-center group-hover:text-orange transition-colors duration-300">{skill}</span>
-  </motion.div>
-);
+  );
+};
 
 interface SkillItem {
   name: string;
@@ -41,23 +49,41 @@ interface SkillSectionProps {
   items: SkillItem[];
 }
 
-const SkillSection: React.FC<SkillSectionProps> = ({ title, items }) => (
-  <motion.div
-    initial={{ opacity: 0, x: -5000 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.9 }}
-    className="mb-12"
-  >
-    <h3 className="text-2xl font-semibold mb-6 text-orange-light text-center">{title}</h3>
-    <div className="flex flex-wrap justify-center gap-4">
-      {items.map((item, index) => (
-        <SkillCard key={item.name} skill={item.name} Icon={item.Icon} index={index} />
-      ))}
-    </div>
-  </motion.div>
-);
+const SkillSection: React.FC<SkillSectionProps> = ({ title, items }) => {
+  const { ref, controls } = useScrollAnimation({
+    threshold: 0.1,
+    initialStates: { opacity: 0, x: -50 }
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: -50 }}
+      animate={controls}
+      transition={{ duration: 0.5 }}
+      className="mb-12"
+    >
+      <h3 className="text-2xl font-semibold mb-6 text-orange-light text-center">{title}</h3>
+      <div className="flex flex-wrap justify-center gap-4">
+        {items.map((item, index) => (
+          <SkillCard key={item.name} skill={item.name} Icon={item.Icon} index={index} />
+        ))}
+      </div>
+    </motion.div>
+  );
+};
 
 const AboutMe = () => {
+  const { ref: headerRef, controls: headerControls } = useScrollAnimation({
+    threshold: 0.1,
+    initialStates: { opacity: 0, x: -50 }
+  });
+
+  const { ref: descriptionRef, controls: descriptionControls } = useScrollAnimation({
+    threshold: 0.1,
+    initialStates: { opacity: 0, y: 20 }
+  });
+
   const skills = [
     { name: 'Python', Icon: FaPython },
     { name: 'JavaScript', Icon: FaJs },
@@ -86,8 +112,9 @@ const AboutMe = () => {
     <section id="about" className="py-20 bg-gray">
       <div className="container mx-auto px-36">
         <motion.h2
+          ref={headerRef}
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          animate={headerControls}
           transition={{ duration: 0.5 }}
           className="text-3xl font-bold mb-5 text-orange px-4"
         >
@@ -96,13 +123,14 @@ const AboutMe = () => {
         <div className="flex justify-start mb-12">
           <motion.div
             initial={{ height: 0 }}
-            animate={{ height: '4rem' }}
+            animate={descriptionControls}
             transition={{ duration: 0.5 }}
             className="w-0.5 bg-orange mr-4"
           ></motion.div>
           <motion.p
+            ref={descriptionRef}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={descriptionControls}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg max-w-3xl"
           >

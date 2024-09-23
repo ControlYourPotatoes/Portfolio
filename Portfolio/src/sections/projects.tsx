@@ -42,8 +42,8 @@ const Projects = () => {
         { Icon: SiOpenstreetmap, name: 'Leaflet' },
         { Icon: SiGooglecloud, name: 'Google Cloud' },
       ],
-      githubLink: "#", // Replace with actual GitHub link
-      demoLink: "#" // Replace with actual demo link
+      githubLink: "https://github.com/ControlYourPotatoes/redfield-react/", // Replace with actual GitHub link
+      demoLink: "" // Replace with actual demo link
     },
     {
       title: "Portfolio Website",
@@ -62,9 +62,9 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray">
+    <section id="projects" className="py-5 bg-gray">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-orange">Projects</h2>
+        <h2 className="text-3xl font-bold mb-8 text-orange text-center">Projects</h2>
         <div className="flex flex-wrap justify-center items-center">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />

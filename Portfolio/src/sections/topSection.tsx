@@ -50,7 +50,7 @@ const TopSection: React.FC = () => {
           
         </div>
 
-        <div className='row-span-full col-start-9 col-end-10 self-end pb-16 justify-self-end z-10'>
+        <div className='row-span-full col-start-9 col-end-10 self-end pb-20 justify-self-end z-10'>
           <motion.div 
             className="flex items-center"
             initial={{ opacity: 0, y: 20 }}
