@@ -13,7 +13,7 @@ const TopSection: React.FC = () => {
       <div className="container mx-auto flex-grow grid grid-cols-10 items-center min-w-full my-10">
         {/* Left side: Content */}
         <motion.div 
-          className="row-span-full col-start-1 col-end-5"
+          className="row-span-full col-start-1 col-end-5 ml-5"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -50,7 +50,7 @@ const TopSection: React.FC = () => {
           
         </div>
 
-        <div className='row-span-full col-start-9 col-end-10 self-end pb-16 justify-self-end'>
+        <div className='row-span-full col-start-9 col-end-10 self-end pb-16 justify-self-end z-10'>
           <motion.div 
             className="flex items-center"
             initial={{ opacity: 0, y: 20 }}
