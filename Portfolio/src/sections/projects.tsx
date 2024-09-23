@@ -19,7 +19,7 @@ const Projects = () => {
         { Icon: FaCss3, name: 'CSS3' },
         { Icon: SiNginx, name: 'Nginx' },
       ],
-      githubLink: "#",
+      githubLink: "https://github.com/neisnei/holbertonschool-AirBnB_clone_v4",
       demoLink: "#"
     },
     {
