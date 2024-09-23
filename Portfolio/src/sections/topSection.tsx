@@ -8,7 +8,7 @@ const TopSection: React.FC = () => {
   const imageOpacity = 0.5;
 
   return (
-    <section className="bg-gray flex flex-col w-full">
+    <section className="bg-gray flex flex-col w-full min-h-lvh">
       <Navbar />
       <div className="container mx-auto flex-grow grid grid-cols-10 items-center min-w-full my-10">
         {/* Left side: Content */}
