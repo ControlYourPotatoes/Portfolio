@@ -4,6 +4,7 @@ import { FaPython, FaJs, FaReact, FaDocker, FaGitAlt, FaHtml5, FaCss3Alt, FaAppl
 import { SiGooglecloud, SiPostgresql, SiTailwindcss, SiUbuntu, SiWindows } from 'react-icons/si';
 import { IoLanguage } from 'react-icons/io5';
 import { IconType } from 'react-icons';
+import { useScrollAnimation } from '../hooks/useScollAnimation';
 
 interface SkillCardProps {
   skill: string;
