@@ -133,26 +133,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, techStack
           ))}
         </motion.div>
       </motion.div>
-      <p className="text-sm mb-6">
-        {highlightTech(description)}
-      </p>
-      <div className="flex justify-between items-center px-2">
-        <motion.a 
-          href={demoLink} 
-          className="text-orange hover:text-orange-light transition-colors duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          View Architecture &rarr;
-        </motion.a>
-        <motion.a 
-          href={githubLink} 
-          className="text-gray-400 hover:text-white transition-colors duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          GitHub Repository
-        </motion.a>
+      <div >
+        <p className="text-sm mb-6">
+          {highlightTech(description)}
+        </p>
+
+        <div className="flex justify-between items-end h-auto">
+          <motion.a 
+            href={demoLink} 
+            className="text-orange hover:text-orange-light transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            View Architecture &rarr;
+          </motion.a>
+          <motion.a 
+            href={githubLink} 
+            className="text-gray-400 hover:text-white transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            GitHub Repository
+          </motion.a>
+        </div>
+        
       </div>
     </motion.div>
   );
