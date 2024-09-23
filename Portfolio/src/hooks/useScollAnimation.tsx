@@ -26,6 +26,10 @@ export const useScrollAnimation = ({
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
+    controls.set(initialStates);
+  }, [controls, initialStates]);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

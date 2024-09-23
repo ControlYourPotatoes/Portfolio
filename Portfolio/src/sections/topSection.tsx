@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Navbar from '../components/navBar';
 import Socials from '../components/socials';
 import faceImage from '../assets/gray.webp';
+import { Link } from 'react-scroll';
 
 const TopSection: React.FC = () => {
   const imageOpacity = 0.5;
@@ -21,13 +22,20 @@ const TopSection: React.FC = () => {
           <h1 className="text-5xl font-bold mb-2 text-orange">Alexander Puga</h1>
           <p className="text-xl mb-1 text-white">Full Stack Web3 Developer</p>
           <p className="text-md mb-4 text-white">Puerto Rico</p>
-          <motion.button 
-            className="bg-orange text-white px-6 py-2 rounded-full hover:bg-orange-light transition duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            offset={-70} // Adjust this value if you have a fixed header
           >
-            Contact Me
-          </motion.button>
+            <motion.button 
+              className="bg-orange text-white px-6 py-2 rounded-full hover:bg-orange-light transition duration-300 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Contact Me
+            </motion.button>
+          </Link>
         </motion.div>
         
         {/* Right side: Image and Socials */}

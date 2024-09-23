@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaPython, FaFlask, FaDatabase, FaJs, FaHtml5, FaCss3, FaReact, FaEthereum, FaNode, FaDocker } from 'react-icons/fa';
 import { SiMysql, SiJquery, SiNginx, SiTailwindcss, SiTypescript, SiChainlink, SiGooglecloud, SiPostgresql, SiSolidity, SiOpenstreetmap, SiMui } from 'react-icons/si';
 import { TbBrandVite, TbApi } from 'react-icons/tb';
