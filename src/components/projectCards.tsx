@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useMotionValue, animate } from 'framer-motion'
 import useMeasure from 'react-use-measure';
 import { IconType } from 'react-icons';
 import { ProjectCardProps } from '../types';
+import { useScrollAnimation } from '../hooks/useScollAnimation';
 
 
 const TechIcon: React.FC<{ Icon: IconType; name: string }> = ({ Icon, name }) => {
@@ -41,6 +42,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, techStack
   const xTranslation = useMotionValue<number>(0);
   const [mustFinish, setMustFinish] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  const { ref: cardRef, controls: cardControls } = useScrollAnimation({
+    threshold: 0.1,
+    initialStates: { opacity: 0, y: 50 }
+  });
 
   const gap = 4;
   const baseVelocity = 30; // pixels per second
@@ -112,10 +118,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, techStack
 
   return (
     <motion.div 
+      ref={cardRef}
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={cardControls}
       transition={{ duration: 0.5 }}
-      className="bg-gray-dark text-white p-4  md:p-6 rounded-lg shadow-xl max-w-md flex flex-col h-fit "
+      className="bg-gray-dark text-white p-4 md:p-6 rounded-lg shadow-xl max-w-md flex flex-col h-fit"
     >
       <h2 className="text-2xl font-bold mb-1 text-center text-orange-light">{title}</h2>
       <motion.div 
