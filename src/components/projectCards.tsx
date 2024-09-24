@@ -115,7 +115,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, techStack
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-gray-dark text-white p-6 rounded-lg shadow-xl max-w-md m-2 flex flex-col h-full"
+      className="bg-gray-dark text-white p-4  md:p-6 rounded-lg shadow-xl max-w-md flex flex-col h-fit "
     >
       <h2 className="text-2xl font-bold mb-1 text-center text-orange-light">{title}</h2>
       <motion.div 
