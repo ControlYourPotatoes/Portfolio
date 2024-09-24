@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex space-x-6 pr-6">
           {menuItems.map((item) => (
             <li key={item}>
               <Link

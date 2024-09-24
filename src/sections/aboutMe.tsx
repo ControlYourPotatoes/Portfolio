@@ -109,30 +109,30 @@ const AboutMe = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray">
-      <div className="container mx-auto px-36">
+    <section id="about" className="py-16 md:py-20 bg-gray">
+      <div className="container mx-auto px-4 md:px-36">
         <motion.h2
           ref={headerRef}
           initial={{ opacity: 0, x: -50 }}
           animate={headerControls}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-bold mb-5 text-orange px-4"
+          className="text-2xl md:text-3xl font-bold mb-5 text-orange"
         >
           About Me
         </motion.h2>
-        <div className="flex justify-start mb-12">
+        <div className="flex justify-start mb-8 md:mb-12">
           <motion.div
             initial={{ height: 0 }}
             animate={descriptionControls}
             transition={{ duration: 0.5 }}
-            className="w-0.5 bg-orange mr-4"
+            className="w-0.5 bg-orange mr-4 hidden md:block"
           ></motion.div>
           <motion.p
             ref={descriptionRef}
             initial={{ opacity: 0, y: 20 }}
             animate={descriptionControls}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg max-w-3xl"
+            className="text-base md:text-lg max-w-3xl"
           >
             Full-Stack developer with practical experience in building web applications using modern technologies. Focused on Web3 development and blockchain technologies.
           </motion.p>
