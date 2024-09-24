@@ -11,7 +11,7 @@ const ContactSection: React.FC = () => {
   });
 
   return (
-    <section id="contact" className="py-20 bg-gray" ref={ref}>
+    <section id="contact" className="py-16 md:py-20 bg-gray" ref={ref}>
       <motion.div 
         className="container mx-auto px-4"
         initial={{ opacity: 0, y: 50 }}
@@ -19,7 +19,7 @@ const ContactSection: React.FC = () => {
         transition={{ duration: 0.5 }}
       >
         <motion.h2 
-          className="text-3xl font-bold mb-8 text-orange text-center"
+          className="text-2xl md:text-3xl font-bold mb-8 text-orange text-center"
           initial={{ opacity: 0, y: -20 }}
           animate={controls}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -28,12 +28,12 @@ const ContactSection: React.FC = () => {
         </motion.h2>
         
         <motion.div 
-          className="max-w-3xl mx-auto bg-gray-800 rounded-lg p-8 shadow-lg"
+          className="max-w-3xl mx-auto bg-gray-800 rounded-lg p-6 md:p-8 shadow-lg"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={controls}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p className="text-center mb-6 text-lg">
+          <p className="text-center mb-6 text-base md:text-lg">
             I'm always open to new opportunities and collaborations. Feel free to reach out!
           </p>
           
