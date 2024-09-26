@@ -9,10 +9,10 @@ const TopSection: React.FC = () => {
   const imageOpacity = 0.5;
 
   return (
-    <section className="bg-gray flex flex-col w-full md:min-h-lvh ">
+    <section className="bg-gray flex flex-col w-full md:h-fit ">
 
       <Navbar />
-      <div className="container mx-auto grid grid-cols-5 md:grid-cols-10 items-center px-5 mt-14 md:px-1">
+      <div className="container mx-auto grid grid-cols-5 md:grid-cols-10 items-center px-5 mt-14 md:px-2 md:mt-36">
         {/* Content */}
         <motion.div 
           className="row-span-full col-start-1 col-end-4 md:col-end-5"

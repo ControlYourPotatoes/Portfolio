@@ -109,7 +109,7 @@ const AboutMe = () => {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-20 bg-gray">
+    <section id="about" className="py-16 md:py-32 bg-gray">
       <div className="container mx-auto px-4 md:px-36">
         <motion.h2
           ref={headerRef}
